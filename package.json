@@ -1,0 +1,20 @@
+{
+  "name": "dterp-open-beta",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "npx concurrently \"npm run backend\" \"npm run frontend\"",
+    "backend": "npm --workspace backend run dev",
+    "frontend": "npm --workspace frontend run dev",
+    "build": "npm run build --workspaces",
+    "package:backend-installer": "node ./scripts/package-backend-installer.js",
+    "package:frontend-installer": "node ./scripts/package-frontend-installer.js",
+    "package:windows-exe": "node ./scripts/package-windows-exe.js"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
